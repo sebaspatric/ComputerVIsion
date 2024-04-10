@@ -1,0 +1,33 @@
+echo $PATH
+export PATH="/d/ProgramData/anaconda3/Scripts:$PATH"
+source ~/.bashrc
+
+
+
+Parece que el entorno en el que estás trabajando es Git Bash (MINGW64), y no PowerShell o símbolo del sistema de Windows. En Git Bash, el comando para ver el PATH y para establecer variables de entorno es diferente al de PowerShell o al símbolo del sistema.
+
+Aquí tienes los pasos para verificar que la ubicación de Conda se haya agregado correctamente al PATH en Git Bash:
+
+1. Para ver el contenido actual de la variable de entorno PATH, puedes usar el siguiente comando en Git Bash:
+
+```bash
+echo $PATH
+```
+
+2. Este comando mostrará el contenido actual del PATH en tu sistema. Debes buscar la ubicación de Conda (`D:\ProgramData\anaconda3\Scripts`) en la lista de rutas que se muestran. Si la ubicación de Conda está presente en el PATH, significa que se ha agregado correctamente.
+
+3. Si la ubicación de Conda no está presente en el PATH, necesitarás agregarla manualmente. Puedes hacerlo exportando la ubicación de Conda al PATH en tu archivo `.bashrc` o `.bash_profile`. Por ejemplo:
+
+```bash
+export PATH="/d/ProgramData/anaconda3/Scripts:$PATH"
+```
+
+Recuerda reemplazar `/d/ProgramData/anaconda3/Scripts` con la ruta correcta al directorio `Scripts` de tu instalación de Conda.
+
+4. Guarda los cambios en tu archivo de perfil de Bash (`~/.bashrc` o `~/.bash_profile`) y recarga la configuración ejecutando el siguiente comando en Git Bash:
+
+```bash
+source ~/.bashrc
+```
+
+Después de estos pasos, deberías poder ejecutar comandos de Conda, como `conda --version`, en Git Bash sin problemas.
